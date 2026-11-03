@@ -57,19 +57,19 @@ a { color: inherit; }
 .hero { position: relative; height: min(92svh, 1100px); min-height: 520px; overflow: hidden; background: #000; }
 .hero figure { position: absolute; inset: 0; margin: 0; opacity: 0; transition: opacity 1.8s ease; }
 .hero figure.on { opacity: 1; }
-.hero figure img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.06); transition: transform 9s linear; }
+.hero figure img { width: 100%; height: 100%; object-fit: cover; object-position: right bottom; transform: scale(1.06); transition: transform 9s linear; }
 .hero figure.on img { transform: scale(1); }
 .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.45) 0%, rgba(0,0,0,0) 28%, rgba(0,0,0,0) 55%, rgba(0,0,0,.6) 100%); pointer-events: none; }
-.hero-copy { position: absolute; z-index: 2; left: 0; right: 0; bottom: clamp(36px, 8vh, 90px); display: grid; gap: 18px; justify-items: center; text-align: center; }
+.hero-copy { position: absolute; z-index: 2; left: 0; right: 0; bottom: clamp(80px, 11vh, 120px); display: grid; gap: 18px; justify-items: center; text-align: center; }
 .hero-copy h1 { margin: 0; font: 400 clamp(30px, 5.4vw, 72px)/1.08 var(--display); letter-spacing: .14em; text-transform: uppercase; text-wrap: balance; text-shadow: 0 2px 30px rgba(0,0,0,.35); }
 .hero-copy p { margin: 0; font: 500 11px/1.5 var(--body); letter-spacing: .4em; text-transform: uppercase; color: var(--bone); opacity: .85; }
-.hero-cap { position: absolute; z-index: 2; right: max(var(--gutter), env(safe-area-inset-right, 0px)); bottom: 22px; font: 400 11px/1 var(--mono); color: var(--bone); opacity: .7; letter-spacing: .04em; }
-.hero-dots { position: absolute; z-index: 2; left: max(var(--gutter), env(safe-area-inset-left, 0px)); bottom: 22px; display: flex; gap: 8px; }
+.hero-cap { position: absolute; z-index: 2; left: max(var(--gutter), env(safe-area-inset-left, 0px)); bottom: 22px; font: 400 11px/1 var(--mono); color: var(--bone); opacity: .7; letter-spacing: .04em; }
+.hero-dots { position: absolute; z-index: 2; left: max(var(--gutter), env(safe-area-inset-left, 0px)); bottom: 44px; display: flex; gap: 8px; }
 .hero-dots button { width: 22px; height: 22px; padding: 10px 0; background: none; border: 0; cursor: pointer; }
 .hero-dots button::before { content: ""; display: block; height: 2px; background: var(--bone); opacity: .35; }
 .hero-dots button[aria-current="true"]::before { opacity: 1; background: var(--gold); }
 @media (prefers-reduced-motion: reduce) { .hero figure, .hero figure img { transition: none; transform: none; } }
-@media (max-width: 600px) { .hero-cap { display: none; } }
+@media (max-width: 600px) { .hero-cap { display: none; } .hero-dots { bottom: 74px; left: 50%; translate: -50% 0; } .hero-copy { bottom: 110px; } }
 
 /* ---------- Intro ---------- */
 .intro { padding-block: clamp(64px, 11vw, 140px); display: grid; justify-items: center; text-align: center; gap: 22px; }
@@ -80,7 +80,7 @@ a { color: inherit; }
 /* ---------- Collections (full-width tiles) ---------- */
 .collections { display: grid; gap: 6px; }
 .tile { position: relative; display: block; height: clamp(320px, 62vh, 720px); overflow: hidden; text-decoration: none; background: #000; }
-.tile img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.4s cubic-bezier(.2,.7,.2,1), opacity .6s; opacity: .86; }
+.tile img { width: 100%; height: 100%; object-fit: cover; object-position: right bottom; transition: transform 1.4s cubic-bezier(.2,.7,.2,1), opacity .6s; opacity: .86; }
 .tile:hover img, .tile:focus-visible img { transform: scale(1.035); opacity: 1; }
 .tile::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,.55), rgba(0,0,0,0) 60%); }
 .tile-copy { position: absolute; z-index: 2; left: 0; right: 0; bottom: clamp(28px, 6vw, 64px); display: grid; gap: 12px; }
