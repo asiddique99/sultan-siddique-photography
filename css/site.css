@@ -46,7 +46,7 @@ a { color: inherit; }
 .menu-btn i { display: block; height: 1px; background: currentColor; margin: 7px 0; transition: transform .3s; }
 .menu-open .menu-btn i:first-child { transform: translateY(4px) rotate(45deg); }
 .menu-open .menu-btn i:last-child { transform: translateY(-4px) rotate(-45deg); }
-@media (max-width: 860px) {
+@media (max-width: 1180px) {
   .menu-btn { display: block; }
   .nav { position: fixed; inset: 0; z-index: -1; flex-direction: column; justify-content: center; align-items: center; gap: 28px; background: var(--wall); opacity: 0; pointer-events: none; transition: opacity .3s; }
   .nav a { font-size: 14px; }
@@ -176,7 +176,21 @@ a { color: inherit; }
 .ig { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.6; flex: none; vertical-align: -3px; }
 .ig .dot { fill: currentColor; stroke: none; }
 .nav-ig a { display: inline-flex; align-items: center; gap: 8px; }
-@media (min-width: 861px) { .nav-ig span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); } }
+.nav-ig span { text-transform: none; letter-spacing: .06em; font-size: 12.5px; }
+@media (min-width: 1181px) and (max-width: 1559px) { .nav-ig span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); } }
 .foot-ig { display: inline-flex; align-items: center; gap: 8px; text-transform: none !important; letter-spacing: .04em !important; font-size: 12px !important; }
 .cta .ig { width: 15px; height: 15px; }
 .prose p + p .cta { margin-top: 0; }
+
+/* Instagram handle links: hero, collection pages, photo viewer */
+.ig-link { display: inline-flex; align-items: center; gap: 9px; text-decoration: none; color: var(--bone); font: 500 13px/1 var(--body); letter-spacing: .06em; padding: 8px 0; border-bottom: 1px solid transparent; transition: color .25s, border-color .25s; }
+.ig-link .ig { width: 18px; height: 18px; }
+.ig-link:hover { color: var(--gold); border-bottom-color: var(--gold); }
+.hero-copy .ig-link { margin-top: 4px; text-shadow: 0 1px 12px rgba(0,0,0,.5); }
+.page-head .row .ig-link { color: var(--gold); }
+.lb-actions { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
+.lb-ig { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: var(--bone); font: 500 12px/1 var(--body); letter-spacing: .06em; opacity: .85; }
+.lb-ig:hover { opacity: 1; color: var(--gold); }
+@media (max-width: 600px) { .hero-copy .ig-link { font-size: 12px; } .lb-actions { gap: 14px; } }
+.nav a, .wordmark b, .wordmark span { white-space: nowrap; }
+.site-head .nav { flex-wrap: nowrap; }

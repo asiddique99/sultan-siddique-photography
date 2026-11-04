@@ -42,8 +42,11 @@
     '<div class="lb-top"><span class="lb-count"></span><button type="button" class="lb-close">Close</button></div>' +
     '<div class="lb-stage"><img alt=""><button type="button" class="lb-nav lb-prev" aria-label="Previous photo">' + arrow("M15 4 7 12l8 8") + '</button>' +
     '<button type="button" class="lb-nav lb-next" aria-label="Next photo">' + arrow("M9 4l8 8-8 8") + '</button></div>' +
-    '<div class="lb-bottom"><div class="lb-cap"><h3></h3><p></p><span class="lb-exif"></span></div><a class="lb-print" href="about.html#prints">Inquire about a print</a></div>';
+    '<div class="lb-bottom"><div class="lb-cap"><h3></h3><p></p><span class="lb-exif"></span></div><div class="lb-actions"><a class="lb-ig" target="_blank" rel="noopener"></a><a class="lb-print" href="about.html#prints">Inquire about a print</a></div></div>';
   document.body.appendChild(lb);
+  var igSrc = document.querySelector(".nav-ig a");
+  var lbIg = lb.querySelector(".lb-ig");
+  if (igSrc) { lbIg.href = igSrc.href; lbIg.innerHTML = igSrc.querySelector("svg").outerHTML + "<span>" + igSrc.querySelector("span").textContent + "</span>"; lbIg.setAttribute("aria-label", "Instagram " + igSrc.querySelector("span").textContent); } else { lbIg.remove(); }
   var lbImg = lb.querySelector(".lb-stage img"), idx = 0, lastFocus = null;
   function render() {
     var f = items[idx], d = f.dataset;
