@@ -194,3 +194,10 @@ a { color: inherit; }
 @media (max-width: 600px) { .hero-copy .ig-link { font-size: 12px; } .lb-actions { gap: 14px; } }
 .nav a, .wordmark b, .wordmark span { white-space: nowrap; }
 .site-head .nav { flex-wrap: nowrap; }
+
+/* Invisible Instagram link laid exactly over the logo printed on each photo */
+.wm-link { position: absolute; z-index: 3; display: block; cursor: pointer; border-radius: 4px; }
+.wm-link:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.hero figure:not(.on) { pointer-events: none; }
+.hero figure .wm-link { z-index: 3; }
+.grid figure .wm-link { left: auto; top: auto; cursor: pointer; }
